@@ -66,6 +66,23 @@ export default class Home extends Component {
     });
   }
 
+ /* onMarksheetSubmit = async (event) => {
+      event.preventDefault();
+      const formData = event.target;
+
+      const digiId = formData.digiId.value;
+      const rollno = formData.rollno.value;
+      const name = formData.name.value;
+      const dob = formData.dob.value;
+      const guardian = formData.guardian.value;
+      const percent = formData.percent.value;
+      const board = formData.board.value;
+
+      await tenthContract.methods.setTenthDetails(digiId,rollno,name,dob,guardian,percent,true,board).call({
+          from: this.props.adminAccount
+      });
+  }*/
+
   // Search and display the data using DigiId
   onSearch = async (event) => {
     event.preventDefault();

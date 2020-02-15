@@ -25,9 +25,9 @@ contract AuthUsers {
         string memory _dob,
         string memory _Address,
         string memory _phoneNumber
-    ) public returns (uint256) {
+    ) public returns (uint256) { 
         require(
-            msg.sender == 0xEe2F4d0E3846E3916bC79d9BfeA88AE246d1fD67,
+            msg.sender == 0x576D92b599Bb6c4024dacf602dAeeeb17923E8d7,
             "Admin not authorised."
         );
         require(addressToAccount[_address] == 0, "User already registered.");

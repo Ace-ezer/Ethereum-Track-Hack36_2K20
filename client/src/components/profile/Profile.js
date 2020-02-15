@@ -64,7 +64,7 @@ export default class Profile extends Component {
                     </div>
                 </div>
                 <div className='docx'> 
-                    <Marksheet />
+                    <Marksheet account={this.state.account} digiId={this.state.digiId}/>
                 </div>
                 </section>
             </Fragment>

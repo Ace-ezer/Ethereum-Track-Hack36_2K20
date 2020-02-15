@@ -1,32 +1,38 @@
 import React, { Component, Fragment } from 'react';
-import { Redirect } from 'react-router-dom';
-
-import web3 from '../../web3';
-import storeHash from '../../storehash';
+import tenthContract from '../../tenthContract';
 
 export default class Marksheet extends Component {
     state = {
-        account: '',
+        digiId: null,
+        marksheetData: {}
     }
 
     async componentDidMount() {
 
+    /*    this.setState({
+            digiId: this.props.digiId
+        });
+
+        const marksheetData = await tenthContract.methods.getTenthDetails(this.state.digiId).call();
+
+        this.setState({
+            marksheetData: marksheetData
+        });
+        */
     }
 
     render() {
         return (
             <Fragment>
-                <h3 className='userData title'>Roll Number: 5675665757</h3>
+                <h3 className='userData title'>Roll Number: 5234564728</h3>
                     <div className='userData'>
                         <h3 className='title1'>Marksheet (Boards)</h3>
                         <center><hr /></center>
-                        <b className='title'>Name:</b>Peeyush<br />
-                        <b className='title'>Father's name:</b>Abhishek<br />
-                        <b className='title'>DOB:</b>09/12<br />
+                        <b className='title'>Name:</b>/Arpit<br />
+                        <b className='title'>Father's name:</b>YYM singh yadav<br />
+                        <b className='title'>DOB:</b>07/07<br />
                         <b className='title'>Board:</b>CBSE<br />
-                        <b className='title'>School:</b>St. Mary's<br />
-                        <b className='title'>Status:</b>Passed<br />
-                        <b className='title'>Percentile:</b>85%<br/>
+                        <b className='title'>Percentile:</b>92<br/>
                     </div>
             </Fragment>
         );
