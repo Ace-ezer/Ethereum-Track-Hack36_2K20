@@ -1,0 +1,63 @@
+/* Global Styles */
+:root {
+    --primary-color: #17a2b8;
+    --dark-color: #343a40;
+    --light-color: #f4f4f4;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: rgb(238, 209, 209);
+    color: #333;
+  }
+  /* Add padding to containers */
+  .containerView {
+    padding: 16px;
+    max-width: 400px;
+    text-align: center;
+    margin: auto;
+    background-color: #e6bbf3;
+    margin-bottom: 30px;
+  }
+  
+  /* Full-width input fields */
+  .containerView input[type=text]{
+    width: 100%;
+    padding: 15px;
+    margin: 22px 0 22px 0;
+    font-size: 20px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  .containerView input[type=text]:focus{
+    outline: none;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: #616161;
+    color: white;
+    font-size: 20px;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }

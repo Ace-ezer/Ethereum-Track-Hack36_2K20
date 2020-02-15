@@ -1,0 +1,101 @@
+/* Global Styles */
+:root {
+    --primary-color: #17a2b8;
+    --dark-color: #343a40;
+    --light-color: #f4f4f4;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #eceaea;
+    color: #333;
+  }
+
+/*Home Page*/
+.container {
+    margin: 20px;
+    padding: 2rem;
+    overflow: hidden;
+    padding: 0 2rem;
+    margin-top: 7rem;
+    margin-bottom: 3rem; 
+}
+
+.searchForm input[type=text] {
+  width: 170px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.searchForm input[type=text]:focus {
+  width: 60%;
+}
+
+.userData {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 20px;
+  font-family: serif;
+}
+
+.title1 {
+  color: grey;
+  font-size: 25px;
+  font-family: serif;
+  margin: 10px;
+}
+
+b {
+  margin-right: 12px
+}
+
+hr {
+  margin-bottom: 20px;
+}
+
+.userData hr {
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
