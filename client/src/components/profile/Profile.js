@@ -3,6 +3,9 @@ import { Redirect } from 'react-router-dom';
 
 import web3 from '../../web3';
 import storeHash from '../../storehash';
+import Marksheet from '../docx/Marksheet';
+
+import "../../css/homeStyles.css";
 
 export default class Profile extends Component {
     state = {
@@ -48,15 +51,20 @@ export default class Profile extends Component {
         return (
             <Fragment>
                 <section className='container'>
-                <h3 className='userData title'>DigiId: {this.state.digiId}</h3>
-                <div className='userData'>
-                    <h3 class='title1'>Digital Identity</h3>
-                    <center><hr /></center>
-                    <b class='title'>Name:</b>  {this.state.userData.name}<br />
-                    <b class='title'>Gender:</b>{this.state.userData.gender}<br />
-                    <b class='title'>DOB:</b>   {this.state.userData.dob}<br />
-                    <b class='title'>Address:</b> {this.state.userData.Address}<br />
-                    <b class='title'>Phone:</b>  {this.state.userData.phoneNumber}<br />
+                <div className='docx'>
+                    <h3 className='userData title'>DigiId: {this.state.digiId}</h3>
+                    <div className='userData'>
+                        <h3 class='title1'>Digital Identity</h3>
+                        <center><hr /></center>
+                        <b class='title'>Name:</b>  {this.state.userData.name}<br />
+                        <b class='title'>Gender:</b>{this.state.userData.gender}<br />
+                        <b class='title'>DOB:</b>   {this.state.userData.dob}<br />
+                        <b class='title'>Address:</b> {this.state.userData.Address}<br />
+                        <b class='title'>Phone:</b>  {this.state.userData.phoneNumber}<br />
+                    </div>
+                </div>
+                <div className='docx'> 
+                    <Marksheet />
                 </div>
                 </section>
             </Fragment>

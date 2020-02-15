@@ -19,7 +19,7 @@ export default class AdminHome extends Component {
                         <input type='text' name='gender' placeholder='Gender...'/><br />
                         <input type='text' name='dob' placeholder='DOB...'/><br />
                         <input type='text' name='address' placeholder='Address...'/><br />
-                        <input type='text' name='phone' placeholder='Phone Number'/><br />
+                        <input type='text' name='phone' placeholder='Phone Number...'/><br />
                         <input type='submit' name='Search' className='registerbtn'/>
                     </form>
                     <br />

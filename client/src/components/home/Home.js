@@ -105,63 +105,6 @@ export default class Home extends Component {
     })
   }
 
-  /*captureFile = (event) => {
-  
-  console.log(event);
-  event.stopPropagation();
-  event.preventDefault();
-  
-  const file = event.target.files[0];
-  let reader = new window.FileReader();
-  reader.readAsArrayBuffer(file);
-  reader.onloadend = () => this.convertToBuffer(reader);
-  }; // CaptureFile
-  
-  convertToBuffer = async (reader) => {
-  // File is converted to Buffer for upload to IPFS
-  const buffer = await Buffer.from(reader.result);
-  // Set this buffer using ES6 syntax
-  this.setState({
-      buffer: buffer
-  });
-  };
-  
-  onSubmit = async (event) => {
-  event.preventDefault();
-  
-  // Get user's MetaMask account address
-  //const accounts = await web3.eth.getAccounts();
-  
-  console.log("Sending Metamask account: " + this.state.account);
-  
-  // Obtain contract address from storehash.js
-  const ethAddress = await storeHash.options.address;
-  this.setState({
-      ethAddress
-  });
-  
-  // Save document to IPFS,return its hash#, and set hash# to state
-  await ipfs.add(this.state.buffer, async (err, ipfsHash) => {
-      //console.error(err);
-      //console.log(ipfsHash);
-  
-      // setState by setting ipfsHash to ipfsHash[0].hash 
-      var id = this.state.ipfsHash.push(ipfsHash[0].hash) - 1;
-      this.setState({
-      ipfsHash: this.state.ipfsHash
-      });
-  
-      // Call Ethereum contract method "sendHash" and .send IPFS hash to etheruem contract 
-      // Return the transaction hash from the ethereum contract
-  
-      await storehash.methods.setHash(this.state.ipfsHash[id].toString()).send({
-      from: this.state.account
-      }, (err, transactionHash) => {
-      console.log(transactionHash);
-      });
-  });
-  };*/
-
   render() {
     return (
       <div className='container'>
@@ -170,7 +113,7 @@ export default class Home extends Component {
         {this.state.isSet ? (<h3 className='userData title'>DigiId: {this.state.digiId}</h3>) : (<span></span>)}
         <br />
         <div className='searchForm'>
-        <h3 class='title'>Search...</h3>
+        <h3 className='title'>Search...</h3>
         <hr/>
           <form onSubmit={this.onSearch}> 
             <input type='text' name='digiId' placeholder='Search User...' value={this.state.searchInput} onChange={this.handleChange} />

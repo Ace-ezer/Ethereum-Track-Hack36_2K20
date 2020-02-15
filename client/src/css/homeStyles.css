@@ -52,6 +52,7 @@
 .userData {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 400px;
+  border-bottom: 5px solid #616161;
   margin: auto;
   text-align: center;
   font-family: arial;
@@ -75,7 +76,12 @@ b {
 }
 
 hr {
+  margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.container .docx {
+  margin-top: 30px;
 }
 
 .userData hr {

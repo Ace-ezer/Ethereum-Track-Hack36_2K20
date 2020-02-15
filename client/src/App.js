@@ -9,7 +9,7 @@ import web3 from './web3';
 
 export default class App extends Component {
     state = {
-        adminAccount: '0xCdE1ce5fcaf97647c4DE7D090F5063be6eA70CF7',
+        adminAccount: '0xEe2F4d0E3846E3916bC79d9BfeA88AE246d1fD67',
         account: ''
     }
 
