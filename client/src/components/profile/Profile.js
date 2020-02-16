@@ -54,13 +54,13 @@ export default class Profile extends Component {
                 <div className='docx'>
                     <h3 className='userData title'>DigiId: {this.state.digiId}</h3>
                     <div className='userData'>
-                        <h3 class='title1'>Digital Identity</h3>
+                        <h3 className='title1'>Digital Identity</h3>
                         <center><hr /></center>
-                        <b class='title'>Name:</b>  {this.state.userData.name}<br />
-                        <b class='title'>Gender:</b>{this.state.userData.gender}<br />
-                        <b class='title'>DOB:</b>   {this.state.userData.dob}<br />
-                        <b class='title'>Address:</b> {this.state.userData.Address}<br />
-                        <b class='title'>Phone:</b>  {this.state.userData.phoneNumber}<br />
+                        <b className='title'>Name:</b>  {this.state.userData.name}<br />
+                        <b className='title'>Gender:</b>{this.state.userData.gender}<br />
+                        <b className='title'>DOB:</b>   {this.state.userData.dob}<br />
+                        <b className='title'>Address:</b> {this.state.userData.Address}<br />
+                        <b className='title'>Phone:</b>  {this.state.userData.phoneNumber}<br />
                     </div>
                 </div>
                 <div className='docx'> 

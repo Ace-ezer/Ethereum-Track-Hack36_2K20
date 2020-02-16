@@ -25,7 +25,7 @@ contract TenthMarksheet{
     uint16 percent,
     bool pass_status,
     string memory board) public {
-        require(msg.sender == 0x576D92b599Bb6c4024dacf602dAeeeb17923E8d7, "Sorry! seems you are not admin...");
+        require(msg.sender == 0x814A3083Ceb549C6d93DaE42c9D3944f95bd28bA, "Sorry! seems you are not admin...");
         digiIdToTenth[digiId] = TenthInfo(RollNo, name, dob,
                                 guardian, percent, pass_status, board);
     }

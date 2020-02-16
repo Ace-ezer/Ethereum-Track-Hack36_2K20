@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import tenthContract from '../../tenthContract';
-import storehash from '../../storehash';
 import web3 from '../../web3';
 import storeHash from '../../storehash';
 
 export default class Marksheet extends Component {
     state = {
         account: '',
-        digiId: null, 
+        digiId: null,
+        isDataReady: true,
         marksheetData: {},
         RollNo: null
     }
@@ -34,22 +34,39 @@ export default class Marksheet extends Component {
             this.setState({
                 digiId: digiId
             });
+
+            var test = false;
+            const data = await tenthContract.methods.getTenthDetails(digiId).call({
+                from: this.state.account
+            },(err,tx) => {
+                if(tx === undefined)
+                    this.setState({
+                        isDataReady: false
+                    });
+            });
+
+            this.setState({
+                marksheetData: data,
+                RollNo: data.RollNo
+            });
     }
 
     render() {
+        var data = this.state.marksheetData;
         return (
-            <Fragment>
+            this.state.isDataReady ? (
+                <Fragment>
                 <h3 className='userData title'>Roll Number: {this.state.RollNo}</h3>
                     <div className='userData'>
                         <h3 className='title1'>Marksheet (Boards)</h3>
                         <center><hr /></center>
-                        <b className='title'>Name:</b>Arpit<br />
-                        <b className='title'>Father's name:</b>YM singh yadav<br />
-                        <b className='title'>DOB:</b>07/07<br />
-                        <b className='title'>Board:</b>CBSE<br />
-                        <b className='title'>Percentile:</b>92<br/>
+                        <b className='title'>Name:</b>{this.state.marksheetData.name}<br />
+                        <b className='title'>Father's name:</b>{this.state.marksheetData.guardian}<br />
+                        <b className='title'>DOB:</b>{this.state.marksheetData.dob}<br />
+                        <b className='title'>Board:</b>{this.state.marksheetData.board}<br />
+                        <b className='title'>Percentile:</b>{this.state.marksheetData.percent}<br/>
                     </div>
-            </Fragment>
+            </Fragment>):('')
         );
     }
 }
