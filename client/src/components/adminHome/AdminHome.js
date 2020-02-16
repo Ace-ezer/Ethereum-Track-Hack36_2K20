@@ -12,11 +12,30 @@ export default class AdminHome extends Component {
         toggleValue: '0'
     }
 
+    handleChange = (event) => {
+        event.preventDefault();
+        this.setState({
+            toggleValue: event.target.value
+        })
+    }
+
     render() {
         return (
             <Fragment>
                 <section className='containerView'>
-                    {this.state.toggleValue == '1'? (
+                <form>
+                    <label>
+                    <input type='radio' value='0' name='form' checked={this.state.toggleValue === '0'} onChange={this.handleChange}/>
+                        Digital ID Registry
+                    </label>
+                    <br/>
+                    <label>
+                    <input type='radio' value='1' name='form' checked={this.state.toggleValue === '1'}  onChange={this.handleChange}/>
+                        Marksheet Registry
+                    </label>
+                </form>
+
+                    {this.state.toggleValue == '0'? (
                     <div className='docx'>
                         <h3 className='title'>Digital ID Registry</h3>
                         <form onSubmit={this.props.onSubmit}>
