@@ -7,7 +7,7 @@ import Marksheet from '../docx/Marksheet';
 
 import "../../css/homeStyles.css";
 
-export default class Profile extends Component {
+export default class Profile extends Component { 
     state = {
         account: '',
         digiId: null,

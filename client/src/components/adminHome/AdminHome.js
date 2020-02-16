@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import web3 from '../../web3';
-import storeHash from '../../storehash'; 
 
 import '../../css/styles.css';
 

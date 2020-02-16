@@ -1,30 +1,45 @@
 import React, { Component, Fragment } from 'react';
 import tenthContract from '../../tenthContract';
+import storehash from '../../storehash';
+import web3 from '../../web3';
+import storeHash from '../../storehash';
 
 export default class Marksheet extends Component {
     state = {
-        digiId: null,
-        marksheetData: {}
+        account: '',
+        digiId: null, 
+        marksheetData: {},
+        RollNo: null
     }
 
     async componentDidMount() {
-
-    /*    this.setState({
-            digiId: this.props.digiId
-        });
-
-        const marksheetData = await tenthContract.methods.getTenthDetails(this.state.digiId).call();
-
-        this.setState({
-            marksheetData: marksheetData
-        });
-        */
+       // Get user's MetaMask account address
+            const accounts = await web3.eth.getAccounts();
+            await this.setState({
+                account: accounts[0]
+            });
+    
+            // Checks whether the account has been changed
+            var accountInterval = setInterval(function() {
+                web3.eth.getAccounts()
+                    .then(account => {
+                        if (accounts[0] !== account[0]) {
+                            window.location.reload();
+                        }
+                    });
+            }, 100);
+            console.log(this.state.account);
+            const digiId = await storeHash.methods.getdigiIdByAddress().call({from: this.state.account});
+    
+            this.setState({
+                digiId: digiId
+            });
     }
 
     render() {
         return (
             <Fragment>
-                <h3 className='userData title'>Roll Number: 5234564728</h3>
+                <h3 className='userData title'>Roll Number: {this.state.RollNo}</h3>
                     <div className='userData'>
                         <h3 className='title1'>Marksheet (Boards)</h3>
                         <center><hr /></center>

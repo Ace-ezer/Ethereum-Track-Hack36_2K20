@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
 import AdminHome from '../adminHome/AdminHome';
 import Profile from '../profile/Profile';
-
+import tenthContract from '../../tenthContract';
 import storeHash from '../../storehash'; 
 import '../../css/homeStyles.css';
 
@@ -66,7 +66,7 @@ export default class Home extends Component {
     });
   }
 
- /* onMarksheetSubmit = async (event) => {
+  onMarksheetSubmit = async (event) => {
       event.preventDefault();
       const formData = event.target;
 
@@ -78,10 +78,12 @@ export default class Home extends Component {
       const percent = formData.percent.value;
       const board = formData.board.value;
 
-      await tenthContract.methods.setTenthDetails(digiId,rollno,name,dob,guardian,percent,true,board).call({
+      await tenthContract.methods.setTenthDetails(digiId,rollno,name,dob,guardian,percent,true,board).send({
           from: this.props.adminAccount
+      }, (err, transactionHash) => {
+        console.log("error: " + err);
       });
-  }*/
+  }
 
   // Search and display the data using DigiId
   onSearch = async (event) => {
@@ -112,7 +114,7 @@ export default class Home extends Component {
     });
   }
 
-  onClearSearch = () => {
+  onClearSearch = () => { 
     this.setState({
       digiId: null,
       userData: {},
@@ -126,7 +128,7 @@ export default class Home extends Component {
     return (
       <div className='container'>
         <h5>Account: {this.props.account}</h5>
-        {this.props.adminAccount === this.props.account ? (<AdminHome onSubmit={this.onSubmit} />) : (<span />)}
+        {this.props.adminAccount === this.props.account ? (<AdminHome onSubmit={this.onSubmit} onMarksheetSubmit={this.onMarksheetSubmit}/>) : (<span />)}
         {this.state.isSet ? (<h3 className='userData title'>DigiId: {this.state.digiId}</h3>) : (<span></span>)}
         <br />
         <div className='searchForm'>
