@@ -18,7 +18,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
     "semantic-ui-react": "^0.88.2",
-    "web3": "^1.2.4"
+    "web3": "^4.16.0"
   },
   "scripts": {
     "start": "react-scripts start",
